@@ -4,6 +4,7 @@ import TimelineSection from "@/components/romantic/TimelineSection";
 import MomentsSection from "@/components/romantic/MomentsSection";
 import GallerySection from "@/components/romantic/GallerySection";
 import LetterSection from "@/components/romantic/LetterSection";
+import SurpriseSection from "@/components/romantic/SurpriseSection";
 import Footer from "@/components/romantic/Footer";
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
       <MomentsSection />
       <GallerySection />
       <LetterSection />
+      <SurpriseSection />
       <Footer />
     </main>
   );
