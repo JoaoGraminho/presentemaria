@@ -1,24 +1,26 @@
 import { motion } from "framer-motion";
-import { Heart, ChevronDown } from "lucide-react";
+import { Leaf, ChevronDown, Sprout } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToStory = () => {
     document.getElementById("historia")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const floatingIcons = [Leaf, Sprout, Leaf, Sprout, Leaf, Sprout];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
-      {/* Elementos decorativos flutuantes */}
+      {/* Elementos decorativos flutuantes - folhas e plantas */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {floatingIcons.map((Icon, i) => (
           <motion.div
             key={i}
-            className="absolute text-primary/20"
+            className="absolute text-primary/30"
             initial={{ opacity: 0 }}
             animate={{ 
-              opacity: [0.2, 0.4, 0.2],
+              opacity: [0.3, 0.5, 0.3],
               y: [-20, 20, -20],
-              rotate: [0, 10, 0]
+              rotate: [0, 15, -15, 0]
             }}
             transition={{
               duration: 6 + i,
@@ -30,7 +32,7 @@ const HeroSection = () => {
               top: `${20 + (i % 3) * 25}%`,
             }}
           >
-            <Heart size={20 + i * 8} fill="currentColor" />
+            <Icon size={24 + i * 6} strokeWidth={1.5} />
           </motion.div>
         ))}
       </div>
@@ -64,16 +66,16 @@ const HeroSection = () => {
             <span className="text-primary italic">de Amor</span>
           </motion.h1>
 
-          {/* Divisor com coração */}
+          {/* Divisor com folha */}
           <motion.div
             className="flex items-center justify-center gap-4 my-8"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-primary/50" />
-            <Heart className="w-6 h-6 text-primary animate-heartbeat" fill="currentColor" />
-            <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-primary/50" />
+            <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-accent/60" />
+            <Leaf className="w-6 h-6 text-accent animate-float" strokeWidth={2} />
+            <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-accent/60" />
           </motion.div>
 
           {/* Subtítulo */}

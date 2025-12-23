@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Sparkles, Moon, HeartHandshake, Sunrise } from "lucide-react";
+import { Leaf, TreePine, Flower2, Sprout } from "lucide-react";
 
 interface MomentItem {
   icon: React.ReactNode;
@@ -11,22 +11,22 @@ interface MomentItem {
 
 const momentsData: MomentItem[] = [
   {
-    icon: <Sparkles className="w-8 h-8" />,
+    icon: <Sprout className="w-8 h-8" />,
     title: "Risadas Infinitas",
     description: "Aquelas gargalhadas que fazem doer a barriga, os momentos bobos que só nós entendemos, as piadas internas que carregamos no coração."
   },
   {
-    icon: <Moon className="w-8 h-8" />,
+    icon: <Leaf className="w-8 h-8" />,
     title: "Noites de Conversa",
     description: "Conversas até o amanhecer, compartilhando sonhos, medos e esperanças. Cada palavra nos aproximando mais."
   },
   {
-    icon: <HeartHandshake className="w-8 h-8" />,
+    icon: <TreePine className="w-8 h-8" />,
     title: "Superações Juntos",
     description: "Os desafios que enfrentamos de mãos dadas, provando que juntos somos mais fortes que qualquer obstáculo."
   },
   {
-    icon: <Sunrise className="w-8 h-8" />,
+    icon: <Flower2 className="w-8 h-8" />,
     title: "Pequenos Gestos",
     description: "Um café na cama, um bilhete escondido, um abraço quando mais precisava. São os pequenos gestos que constroem o grande amor."
   }

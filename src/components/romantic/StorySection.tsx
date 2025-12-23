@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Leaf } from "lucide-react";
 
 const StorySection = () => {
   const ref = useRef(null);
@@ -55,14 +56,14 @@ const StorySection = () => {
             ))}
           </div>
 
-          {/* Decoração final */}
+          {/* Decoração final - folha */}
           <motion.div
-            className="mt-12 text-3xl text-primary/60"
+            className="mt-12 flex justify-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
             transition={{ delay: 1.2, duration: 0.4 }}
           >
-            ♥
+            <Leaf className="w-8 h-8 text-accent" strokeWidth={1.5} />
           </motion.div>
         </motion.div>
       </div>

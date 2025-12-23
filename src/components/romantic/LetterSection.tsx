@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Heart, Feather } from "lucide-react";
+import { Leaf, Feather } from "lucide-react";
 
 const LetterSection = () => {
   const ref = useRef(null);
@@ -85,15 +85,15 @@ const LetterSection = () => {
               </p>
             </motion.div>
 
-            {/* Coração decorativo */}
+            {/* Folha decorativa */}
             <motion.div
               className="absolute -bottom-4 left-1/2 -translate-x-1/2"
               initial={{ scale: 0 }}
               animate={isInView ? { scale: 1 } : { scale: 0 }}
               transition={{ delay: 1.4, duration: 0.4, type: "spring" }}
             >
-              <div className="w-8 h-8 rounded-full bg-card shadow-romantic flex items-center justify-center">
-                <Heart className="w-4 h-4 text-primary animate-heartbeat" fill="currentColor" />
+              <div className="w-10 h-10 rounded-full bg-card shadow-romantic flex items-center justify-center border border-primary/30">
+                <Leaf className="w-5 h-5 text-primary animate-float" strokeWidth={2} />
               </div>
             </motion.div>
           </div>
