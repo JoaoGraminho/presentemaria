@@ -39,30 +39,41 @@ const MomentCard = ({ item, index }: { item: MomentItem; index: number }) => {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 60, rotateX: -15 }}
+      animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 60, rotateX: -15 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.15,
+        ease: [0.25, 0.1, 0.25, 1]
+      }}
+      style={{ perspective: 1000 }}
     >
       <motion.div
-        className="h-full bg-card p-8 rounded-2xl shadow-romantic hover:shadow-romantic-md transition-all duration-300 text-center group border border-border/50"
-        whileHover={{ y: -8 }}
+        className="h-full bg-card p-8 rounded-2xl shadow-romantic hover:shadow-romantic-md transition-all duration-500 text-center group border border-border/50 relative overflow-hidden"
+        whileHover={{ y: -12, scale: 1.02 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
+        {/* Glow effect on hover */}
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        />
+
         {/* Ícone */}
         <motion.div
-          className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 group-hover:bg-primary/20 transition-colors"
-          whileHover={{ rotate: [0, -10, 10, 0] }}
+          className="relative inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/15 text-primary mb-6 group-hover:bg-primary/25 transition-all duration-500"
+          whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
           transition={{ duration: 0.4 }}
         >
           {item.icon}
         </motion.div>
 
         {/* Título */}
-        <h3 className="font-display text-2xl text-foreground mb-4">
+        <h3 className="relative font-display text-2xl text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
           {item.title}
         </h3>
 
         {/* Descrição */}
-        <p className="font-body text-muted-foreground leading-relaxed">
+        <p className="relative font-body text-muted-foreground leading-relaxed">
           {item.description}
         </p>
       </motion.div>
