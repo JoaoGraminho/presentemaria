@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Heart } from "lucide-react";
+import { Leaf } from "lucide-react";
 
 interface TimelineItem {
   date: string;
@@ -69,18 +69,18 @@ const TimelineCard = ({ item, index }: { item: TimelineItem; index: number }) =>
         </motion.div>
       </div>
 
-      {/* Linha central com coração */}
+      {/* Linha central com folha */}
       <div className="hidden md:flex flex-col items-center">
-        <div className="w-px h-16 bg-gradient-to-b from-transparent to-primary/30" />
+        <div className="w-px h-16 bg-gradient-to-b from-transparent to-primary/50" />
         <motion.div
-          className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/30"
+          className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/50"
           whileHover={{ scale: 1.1 }}
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          animate={{ rotate: [0, 5, -5, 0] }}
+          transition={{ duration: 3, repeat: Infinity }}
         >
-          <Heart className="w-4 h-4 text-primary" fill="currentColor" />
+          <Leaf className="w-5 h-5 text-primary" strokeWidth={2} />
         </motion.div>
-        <div className="w-px h-16 bg-gradient-to-b from-primary/30 to-transparent" />
+        <div className="w-px h-16 bg-gradient-to-b from-primary/50 to-transparent" />
       </div>
 
       {/* Espaço vazio para layout alternado */}
@@ -94,7 +94,7 @@ const TimelineSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 md:py-32 bg-romantic-warm">
+    <section className="py-24 md:py-32 bg-secondary">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
