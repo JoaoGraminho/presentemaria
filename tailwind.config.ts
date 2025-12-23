@@ -60,9 +60,9 @@ export default {
         romantic: {
           cream: "hsl(var(--romantic-cream))",
           blush: "hsl(var(--romantic-blush))",
-          rose: "hsl(var(--romantic-rose))",
-          "rose-dark": "hsl(var(--romantic-rose-dark))",
-          warm: "hsl(var(--romantic-warm))",
+          mint: "hsl(var(--romantic-rose))",
+          "mint-dark": "hsl(var(--romantic-rose-dark))",
+          terracotta: "hsl(var(--romantic-warm))",
           text: "hsl(var(--romantic-text))",
           "text-light": "hsl(var(--romantic-text-light))",
         },
