@@ -418,6 +418,209 @@ p {
 }
 
 /* ----------------------------------------
+   SEÇÃO SURPRESA - BUQUÊ DE FLORES
+   ---------------------------------------- */
+.surprise-section {
+    background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+    overflow: hidden;
+}
+
+.surprise-container {
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.surprise-initial {
+    transition: all 0.5s ease;
+}
+
+.surprise-initial.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.surprise-hint {
+    font-family: var(--font-body);
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.surprise-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(232, 180, 184, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.surprise-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(232, 180, 184, 0.6);
+}
+
+.surprise-button:active {
+    transform: scale(0.95);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+.btn-sparkle {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.surprise-revealed {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    position: relative;
+}
+
+.surprise-revealed.visible {
+    display: block;
+    opacity: 1;
+}
+
+.hearts-confetti {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart-confetti {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 3s ease-out infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(-50px) scale(1.2);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(-150px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(0.8);
+    }
+}
+
+.bouquet-container {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.flowers-circle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 280px;
+    margin: 0 auto var(--spacing-md);
+}
+
+.flower-item {
+    font-size: 3rem;
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+    animation: flowerPop 0.6s ease forwards;
+}
+
+@keyframes flowerPop {
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.flower-item:hover {
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
+}
+
+.main-bouquet {
+    font-size: 6rem;
+    animation: bouquetEnter 0.8s ease 0.8s both;
+}
+
+@keyframes bouquetEnter {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.love-message {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--spacing-xs);
+    animation: messageEnter 0.8s ease 1.2s both;
+}
+
+@keyframes messageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.love-subtitle {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    animation: messageEnter 0.8s ease 1.5s both;
+}
+
+.reset-button {
+    margin-top: var(--spacing-lg);
+    padding: 0.5rem 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--color-text-light);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    animation: messageEnter 0.8s ease 2s both;
+}
+
+.reset-button:hover {
+    color: var(--color-heading);
+}
+
+/* ----------------------------------------
    RODAPÉ
    ---------------------------------------- */
 .footer {
@@ -443,6 +646,11 @@ p {
     font-size: 0.85rem;
     opacity: 0.7;
     margin-bottom: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 /* ----------------------------------------
